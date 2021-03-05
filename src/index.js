@@ -1,12 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-//Import react context dev tool
-import { debugContextDevtool } from 'react-context-devtool';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const container = document.getElementById("root");
+// Load Context 
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,13 +12,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// Attach root container
-debugContextDevtool(container, null);
-
-debugContextDevtool(container, {
-  disable: process.env.NODE_ENV === "production"
-});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
