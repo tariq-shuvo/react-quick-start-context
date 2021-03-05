@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -18,8 +18,10 @@ import Dashboard from './components/dashboard/Dashboard';
 function App() {
   const [value, setValue] = useState(null)
 
+  const providervalue = useMemo(() => ({value, setValue}), [value, setValue])
+
   return (
-    <UserContext.Provider value={{value, setValue}}>
+    <UserContext.Provider value={providervalue}>
       <ContextDevTool context={UserContext} id="quick-start-pack-12345" displayName="User Context" />
       <Router>
         <div>
